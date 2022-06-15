@@ -1,0 +1,32 @@
+/* .maintitle {
+    background: blue;
+    margin: 50px;
+    padding: 40px;
+    font-size: 100px;
+    text-align: center;
+}
+.maintitle:hover{
+    background: green;
+    color: aliceblue;
+    transition: 1.5s;
+    width: 500px;
+}
+.image{
+    width: 500px;
+    height: 500px;
+} */
+
+.parent div{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: blue;
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+}

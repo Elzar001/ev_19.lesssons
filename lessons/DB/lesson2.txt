@@ -1,0 +1,70 @@
+id:serial  |    last_name:char(100)    |    name:char(50)    |    city:char(100)    |
+           |        NOT NULL           |     UNIQUE          |                      |
+1          |Snow                       |John                 |1234                  |
+
+
+Типы полей в Postgres:
+
+1. Numeric Types (Числовые типы):
+	а. smallint (2 bytes) -> -32767 to 32767
+	b. integer (4 bytes) -> -2.147.000 to 2.147.000
+	c. bigint (8 bytes) -> ...
+	d. serial (4 bytes) -> автоинкремент(integer, от 1 - 2.147.000)
+	
+2. Character Types (Строковые типы:)
+	a. varchar(кол-во символов, 255) -> если мы указываем 50 символов и заполнили только 10, то остальные 40 строк останутся пустыми
+	b. char (кол-во, 255) -> если не заполним все символы, то оставшиеся будут заполнены пробелами.
+	c. text () -> Неограниченное кол-во символов.
+	
+3. Boolean Types (Булевые типы):
+	boolean(1 byte) -> True/False
+	
+Constraints(Ограничения):
+	1. NOT NULL -> Обозначает то, что поле не может быть пустым и должно обязательно заполняться.
+	2. UNIQUE -> Поле заполняется только уникальными значениями.
+	3. CHECK number > 5 - Поле будет заполняться только теми данными, которые соответствуют условию.
+	4. PRIMARY KEY | FOREIGN KEY
+
+Создание новой таблицы:
+CREATE TABLE <name> (<row> <type> <constraint>, ...);
+DROP TABLE <name>;
+
+Добавление нового столбца:
+ALTER TABLE <tablename> ADD <row> <type> <constraint>;
+
+Добавление ограничения полю:
+ALTER TABLE <name> ADD <constraint> <row>;
+ALTER TABLE person_name ADD UNIQUE (first_name);
+
+Удаления ограничения:
+ALTER TABLE <name> DROP CONSTRAINT <constraint_name> <row>;
+
+
+Добавление данных в таблицу:
+INSERT INTO <name_table> (<rows>) VALUES (<data>)
+
+Обновление данных в таблице:
+UPDATE <name_table> SET <new_value> WHERE <row>(id = 1)
+
+AS - вывод данных в новом столбце, передаем новое имя
+
+AND/OR/NOT - вспомогательные операторы работают также как и в Python
+
+Изменение названия колонны в таблице:
+ALTER TABLE <table_name> RENAME COLUMN <name_column> to <new_name>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

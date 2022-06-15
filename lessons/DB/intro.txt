@@ -1,0 +1,73 @@
+PostgreSQL - Система управления базами данных (СУБД)/DBMS - Database management system - это ряд программ или инструментов, позволяющих создавать базы данных и манипулировать данными в ней
+
+Postgres - сама база данных, она реляционная, то есть данные хранятся в виде таблиц и таблицы имеют связи между собой.
+
+
+SQL(Structured Query Language) - декларативный язык структурированных запросов, он применяется для создания и управления данными.
+
+Команда для входа к юзеру postgresql: sudo -i -u postgres(usename)
+exit
+
+Команда для входа в саму СУБД: psql/ (sudo -u <username> psql)
+\q (для выхода)
+
+Команда для создания юзера:
+sudo -u postgres createuser --interactive - в командной строке терминала
+
+CREATE ROLE <name> <LOGIN SUPERUSER/WITH> PASSWORD 'password'; - в командной строке PostgreSQL
+
+Команда для создания БД:
+sudo -u <postgres> createdb <name> - в командной строке терминала
+
+CREATE DATABASE <name> - в командной строке PostgreSQL
+
+\l - список всех баз данных
+
+\c <название БД> - подключает нас к выбранной БД
+
+\dt - команда для вывода списка таблиц в базе данных
+
+\du - вывод всех пользователей
+
+Импорт данных в БД:
+psql -U <username> -d <dbname> -f <filename>
+
+Получение данных с таблиц:
+SELECT *(all) FROM <tablename>;
+
+Синтаксис:
+SELECT <row>, <row> FROM <tablename>;
+
+WHERE: Используется для фильтрациии по полям. Будут выводиться только те данные, которые верны условию
+
+SELECT <row>, <row> FROM <tablename> WHERE <row> = 'чему-либо';
+
+DISTINCT: Позволяет убрать все дубликаты
+
+SELECT DISTINCT <row> FROM <tablename>
+
+ORDER BY: Позволяет сортировать данные по убыванию или возрастанию ASC (по возрастанию), DESC (по убыванию)
+
+Синтаксис:
+SELECT <row> FROM <tablename> ORDER BY <row> ASC/DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
